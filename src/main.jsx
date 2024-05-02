@@ -1,36 +1,36 @@
 import ReactDOM from 'react-dom';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from './App';
 import About from './pages/AboutMe';
 import Portfolio from './pages/Portfolio';
 import Contact from './pages/Contact';
 import Resume from './pages/Resume';
 
-const router = createBrowserRouter([
+// Define your routes
+const routes = [
   {
     path: '/',
     element: <App />,
     children: [
-      {
-        path: '/About',
-        element: <About />,
-      },
-      {
-        path: '/Portfolio',
-        element: <Portfolio />,
-      },
-      {
-        path: '/Contact',
-        element: <Contact />,
-      },
-      {
-        path: '/Resume',
-        element: <Resume />,
-      },
+      { path: 'about', element: <About /> },
+      { path: 'portfolio', element: <Portfolio /> },
+      { path: 'contact', element: <Contact /> },
+      { path: 'resume', element: <Resume /> },
     ],
   },
-]);
+];
 
+// Render your app with the Router and Routes
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <RouterProvider router={router} />
+  <Router>
+    <Routes>
+      {routes.map((route, index) => (
+        <Route key={index} path={route.path} element={route.element}>
+          {route.children && route.children.map((childRoute, childIndex) => (
+            <Route key={childIndex} path={childRoute.path} element={childRoute.element} />
+          ))}
+        </Route>
+      ))}
+    </Routes>
+  </Router>
 );
