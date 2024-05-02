@@ -1,13 +1,11 @@
-import React from 'react';
-
 const Footer = () => {
   return (
     <footer>
-      <div>
+      <div className="footer-links">
         <a href="https://github.com/achavez14" target="_blank" rel="noopener noreferrer">
           GitHub
         </a>
-        {/* Add another platform link */}
+        {/* You can remove the LinkedIn link */}
       </div>
     </footer>
   );
