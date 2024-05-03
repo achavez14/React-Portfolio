@@ -6,6 +6,8 @@ const Resume = () => {
         Download Resume
       </a>
       <ul>
+        <li>HTML</li>
+        <li>CSS</li>
         <li>JavaScript</li>
         <li>React</li>
         {/* Add more proficiencies */}
