@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 import Header from './components/Header';
 import Navigation from './components/Navigation';
-import Portfolio from './components/Portfolio';
-import Contact from './components/Contact';
-import Resume from './components/Resume';
+import Project from './components/Project';
 import Footer from './components/Footer';
 
 const App = () => {
-    const [selectedSection, setSelectedSection] = useState('Portfolio');
+    const [selectedSection, setSelectedSection] = useState('Project');
 
     const handleNavigationClick = (section) => {
         setSelectedSection(section);
@@ -15,17 +13,11 @@ const App = () => {
 
     let outletComponent;
     switch (selectedSection) {
-        case 'Portfolio':
-            outletComponent = <Portfolio />;
-            break;
-        case 'Contact':
-            outletComponent = <Contact />;
-            break;
-        case 'Resume':
-            outletComponent = <Resume />;
+        case 'Project':
+            outletComponent = <Project />;
             break;
         default:
-            outletComponent = null; // You can set a default component here or leave it as null
+            outletComponent = null;
     }
 
     return (
