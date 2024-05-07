@@ -1,5 +1,4 @@
 export default function Portfolio() {
-  // Sample project data (replace with your actual projects)
   const projects = [
     {
       title: 'Project 1',
@@ -11,7 +10,7 @@ export default function Portfolio() {
     {
       title: 'Project 2',
       description: 'The Rhythm Nation application is a platform where music lovers from around the world can explore a vast collection of royalty-free music for their projects. Users can effortlessly peruse through various music genres, sample tracks (listen to previews), and download high-quality music for their content creation needs. Additionally, musicians are also empowered to showcase their own original royalty-free compositions, fostering a vibrant community of music enthusiasts and creators.',
-      imageSrc: 'path/to/project1-image.jpg',
+      imageSrc: 'path/to/project2-image.jpg',
       deployedLink: 'https://rf-sound-archive-1.onrender.com/',
       githubLink: 'https://github.com/enkw/RF-Sound-Archive.git',
     },
@@ -51,13 +50,15 @@ export default function Portfolio() {
       <h1>Portfolio</h1>
       {/* Render your project cards here */}
       {projects.map((project) => (
-        <Project
-          key={project.title}
-          title={project.title}
-          imageSrc={project.imageSrc}
-          deployedLink={project.deployedLink}
-          githubLink={project.githubLink}
-        />
+        <div key={project.title}>
+          <h2>{project.title}</h2>
+          <p>{project.description}</p>
+          <img src={project.imageSrc} alt={project.title} />
+          <p>
+            <a href={project.deployedLink}>View Deployed</a> |{" "}
+            <a href={project.githubLink}>GitHub Repo</a>
+          </p>
+        </div>
       ))}
     </div>
   );
