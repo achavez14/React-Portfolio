@@ -1,10 +1,16 @@
+import React from "react";
+
 const Resume = () => {
   return (
     <section>
       <h2>Resume</h2>
-      <a href="your-resume.pdf" download>
-        Download Resume
-      </a>
+      <p>
+        You can download my resume as a PDF:
+        <a href="your-resume.pdf" download>
+          Download Resume
+        </a>
+      </p>
+      <h3>Skills</h3>
       <ul>
         <li>HTML</li>
         <li>CSS</li>
